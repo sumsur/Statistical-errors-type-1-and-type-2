@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import scipy.stats
-import numpy as np
+import numpy as np  #packages for statistical testing and for graphics
 
 
 x_min = 0.0
@@ -13,11 +13,11 @@ mean1 = 10.0
 std = 2.0
 std1= 2.0
 
-x = np.linspace(x_min, x_max, 100)
-x1= np.linspace(x_min1, x_max1, 100)
+x = np.linspace(x_min, x_max, 100)  #creating original normal distribution from random numbers
+x1= np.linspace(x_min1, x_max1, 100) #estimating original normal distribution
 
-y = scipy.stats.norm.pdf(x,mean,std)
-y1 = scipy.stats.norm.pdf(x1,mean1,std1)
+y = scipy.stats.norm.pdf(x,mean,std)  #creating original normal distribution from random numbers
+y1 = scipy.stats.norm.pdf(x1,mean1,std1) #estimating original normal distribution
 
 plt.plot(x,y, color='coral')
 plt.plot(x1, y1, color='green')
@@ -35,7 +35,7 @@ pt2 = mean1 + 3.5 * std1
 plt.plot([pt2 ,pt2 ],[0.0,scipy.stats.norm.pdf(pt2 ,mean1, std1)], color='black')
 
 ptx = np.linspace(pt1, pt2, 10)
-pty = scipy.stats.norm.pdf(ptx,mean1,std1)
+pty = scipy.stats.norm.pdf(ptx,mean1,std1)  #demonstrating statistical error type 1
 
 plt.fill_between(ptx, pty, color='yellow', alpha=1.0)
 
@@ -56,7 +56,7 @@ plt.plot([pt2 ,pt2 ],[0.0,scipy.stats.norm.pdf(pt2 ,mean1, std1)], color='black'
 ptx = np.linspace(pt1, pt2, 10)
 pty = scipy.stats.norm.pdf(ptx,mean1,std1)
 
-plt.fill_between(ptx, pty, color='yellow', alpha=1.0)
+plt.fill_between(ptx, pty, color='yellow', alpha=1.0) #demonstrating statistical error type 2
 
 #----------------------------------------------------------------------------------------#
 
